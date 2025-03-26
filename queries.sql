@@ -90,20 +90,3 @@ Select * from Crime where IncidentType = 'Homicide'and not exists (select * from
 Select c.CrimeID, c.IncidentType, c.IncidentDate, c.Status, s.Name as SuspectName from Crime C left join Suspect s on c.CrimeID = s.CrimeID;
 -- 20);
 select distinct s.Name from Suspect s join Crime c on s.CrimeID = c.CrimeID where c.IncidentType in ('Robbery', 'Assault');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
