@@ -1,5 +1,3 @@
-Output:
-
 +---------+--------------+--------------+-------------------------+--------------------------------------+---------------------+
 | CrimeID | IncidentType | IncidentDate | Location                | Description                          | Status              |
 +---------+--------------+--------------+-------------------------+--------------------------------------+---------------------+
@@ -7,20 +5,20 @@ Output:
 |       2 | Homicide     | 2023-09-20   | 456 Elm St, Townsville  | Investigation into a murder case     | Under Investigation |
 |       3 | Theft        | 2023-09-10   | 789 Oak St, Villagetown | Shoplifting incident at a mall       | Closed              |
 +---------+--------------+--------------+-------------------------+--------------------------------------+---------------------+
-+-----------+---------+-----------+-------------------------+------------------------------+
-| SuspectID | CrimeID | Name      | Description             | CriminalHistory              |
-+-----------+---------+-----------+-------------------------+------------------------------+
-|         1 |       1 | Robber 1  | Armed and masked robber | Previous robbery convictions |
-|         2 |       2 | Unknown   | Investigation ongoing   | NULL                         |
-|         3 |       3 | Suspect 1 | Shoplifting suspect     | Prior shoplifting arrests    |
-+-----------+---------+-----------+-------------------------+------------------------------+
-+----------+---------+---------------+--------------------------+----------------+
-| VictimID | CrimeID | Name          | ContactInfo              | Injuries       |
-+----------+---------+---------------+--------------------------+----------------+
-|        1 |       1 | John Doe      | johndoe@example.com      | Minor injuries |
-|        2 |       2 | Jane Smith    | janesmith@example.com    | Deceased       |
-|        3 |       3 | Alice Johnson | alicejohnson@example.com | None           |
-+----------+---------+---------------+--------------------------+----------------+
++-----------+---------+-----------+-------------------------+------+------------------------------+
+| SuspectID | CrimeID | Name      | Description             | Age  | CriminalHistory              |
++-----------+---------+-----------+-------------------------+------+------------------------------+
+|         1 |       1 | Robber 1  | Armed and masked robber |   30 | Previous robbery convictions |
+|         2 |       2 | Unknown   | Investigation ongoing   | NULL | NULL                         |
+|         3 |       3 | Suspect 1 | Shoplifting suspect     |   45 | Prior shoplifting arrests    |
++-----------+---------+-----------+-------------------------+------+------------------------------+
++----------+---------+---------------+--------------------------+------+----------------+
+| VictimID | CrimeID | Name          | ContactInfo              | Age  | Injuries       |
++----------+---------+---------------+--------------------------+------+----------------+
+|        1 |       1 | John Doe      | johndoe@example.com      |   35 | Minor injuries |
+|        2 |       2 | Jane Smith    | janesmith@example.com    |   25 | Deceased       |
+|        3 |       3 | Alice Johnson | alicejohnson@example.com |   45 | None           |
++----------+---------+---------------+--------------------------+------+----------------+
 +---------+--------------+--------------+------------------------+--------------------------------------+--------+
 | CrimeID | IncidentType | IncidentDate | Location               | Description                          | Status |
 +---------+--------------+--------------+------------------------+--------------------------------------+--------+
@@ -43,6 +41,21 @@ Output:
 +---------+--------------+--------------+-------------------------+--------------------------------+--------+
 |       3 | Theft        | 2023-09-10   | 789 Oak St, Villagetown | Shoplifting incident at a mall | Closed |
 +---------+--------------+--------------+-------------------------+--------------------------------+--------+
++---------------+------+
+| Name          | Age  |
++---------------+------+
+| Alice Johnson |   45 |
+| Suspect 1     |   45 |
+| John Doe      |   35 |
+| Robber 1      |   30 |
+| Jane Smith    |   25 |
+| Unknown       | NULL |
++---------------+------+
++------------+
+| AverageAge |
++------------+
+|    36.0000 |
++------------+
 +--------------+-------+
 | IncidentType | Count |
 +--------------+-------+
@@ -63,6 +76,11 @@ Output:
 | Unknown       | Under Investigation |
 | Suspect 1     | Closed              |
 +---------------+---------------------+
++--------------+
+| IncidentType |
++--------------+
+| Robbery      |
++--------------+
 +---------------+
 | Name          |
 +---------------+
@@ -92,5 +110,3 @@ Output:
 +----------+
 | Robber 1 |
 +----------+
-
-#Note : Output of queries that has age column involved is exempted as age column is not specified in the table creation queries
