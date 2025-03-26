@@ -1,0 +1,96 @@
+Output:
+
++---------+--------------+--------------+-------------------------+--------------------------------------+---------------------+
+| CrimeID | IncidentType | IncidentDate | Location                | Description                          | Status              |
++---------+--------------+--------------+-------------------------+--------------------------------------+---------------------+
+|       1 | Robbery      | 2023-09-15   | 123 Main St, Cityville  | Armed robbery at a convenience store | Open                |
+|       2 | Homicide     | 2023-09-20   | 456 Elm St, Townsville  | Investigation into a murder case     | Under Investigation |
+|       3 | Theft        | 2023-09-10   | 789 Oak St, Villagetown | Shoplifting incident at a mall       | Closed              |
++---------+--------------+--------------+-------------------------+--------------------------------------+---------------------+
++-----------+---------+-----------+-------------------------+------------------------------+
+| SuspectID | CrimeID | Name      | Description             | CriminalHistory              |
++-----------+---------+-----------+-------------------------+------------------------------+
+|         1 |       1 | Robber 1  | Armed and masked robber | Previous robbery convictions |
+|         2 |       2 | Unknown   | Investigation ongoing   | NULL                         |
+|         3 |       3 | Suspect 1 | Shoplifting suspect     | Prior shoplifting arrests    |
++-----------+---------+-----------+-------------------------+------------------------------+
++----------+---------+---------------+--------------------------+----------------+
+| VictimID | CrimeID | Name          | ContactInfo              | Injuries       |
++----------+---------+---------------+--------------------------+----------------+
+|        1 |       1 | John Doe      | johndoe@example.com      | Minor injuries |
+|        2 |       2 | Jane Smith    | janesmith@example.com    | Deceased       |
+|        3 |       3 | Alice Johnson | alicejohnson@example.com | None           |
++----------+---------+---------------+--------------------------+----------------+
++---------+--------------+--------------+------------------------+--------------------------------------+--------+
+| CrimeID | IncidentType | IncidentDate | Location               | Description                          | Status |
++---------+--------------+--------------+------------------------+--------------------------------------+--------+
+|       1 | Robbery      | 2023-09-15   | 123 Main St, Cityville | Armed robbery at a convenience store | Open   |
++---------+--------------+--------------+------------------------+--------------------------------------+--------+
++--------------------+
+| TotalNoOfIncidents |
++--------------------+
+|                  3 |
++--------------------+
++--------------+
+| IncidentType |
++--------------+
+| Robbery      |
+| Homicide     |
+| Theft        |
++--------------+
++---------+--------------+--------------+-------------------------+--------------------------------+--------+
+| CrimeID | IncidentType | IncidentDate | Location                | Description                    | Status |
++---------+--------------+--------------+-------------------------+--------------------------------+--------+
+|       3 | Theft        | 2023-09-10   | 789 Oak St, Villagetown | Shoplifting incident at a mall | Closed |
++---------+--------------+--------------+-------------------------+--------------------------------+--------+
++--------------+-------+
+| IncidentType | Count |
++--------------+-------+
+| Robbery      |     1 |
++--------------+-------+
++----------+
+| Name     |
++----------+
+| John Doe |
++----------+
++---------------+---------------------+
+| Name          | Status              |
++---------------+---------------------+
+| John Doe      | Open                |
+| Jane Smith    | Under Investigation |
+| Alice Johnson | Closed              |
+| Robber 1      | Open                |
+| Unknown       | Under Investigation |
+| Suspect 1     | Closed              |
++---------------+---------------------+
++---------------+
+| Name          |
++---------------+
+| John Doe      |
+| Jane Smith    |
+| Alice Johnson |
+| Robber 1      |
+| Unknown       |
+| Suspect 1     |
++---------------+
++---------+--------------+--------------+-------------------------+--------------------------------------+---------------------+---------------+--------------------------+----------------+-------------+-------------------------+------------------------------+
+| CrimeID | IncidentType | IncidentDate | Location                | Description                          | Status              | VictimName    | ContactInfo              | Injuries       | SuspectName | Description             | CriminalHistory              |
++---------+--------------+--------------+-------------------------+--------------------------------------+---------------------+---------------+--------------------------+----------------+-------------+-------------------------+------------------------------+
+|       1 | Robbery      | 2023-09-15   | 123 Main St, Cityville  | Armed robbery at a convenience store | Open                | John Doe      | johndoe@example.com      | Minor injuries | Robber 1    | Armed and masked robber | Previous robbery convictions |
+|       2 | Homicide     | 2023-09-20   | 456 Elm St, Townsville  | Investigation into a murder case     | Under Investigation | Jane Smith    | janesmith@example.com    | Deceased       | Unknown     | Investigation ongoing   | NULL                         |
+|       3 | Theft        | 2023-09-10   | 789 Oak St, Villagetown | Shoplifting incident at a mall       | Closed              | Alice Johnson | alicejohnson@example.com | None           | Suspect 1   | Shoplifting suspect     | Prior shoplifting arrests    |
++---------+--------------+--------------+-------------------------+--------------------------------------+---------------------+---------------+--------------------------+----------------+-------------+-------------------------+------------------------------+
++---------+--------------+--------------+---------------------+-------------+
+| CrimeID | IncidentType | IncidentDate | Status              | SuspectName |
++---------+--------------+--------------+---------------------+-------------+
+|       1 | Robbery      | 2023-09-15   | Open                | Robber 1    |
+|       2 | Homicide     | 2023-09-20   | Under Investigation | Unknown     |
+|       3 | Theft        | 2023-09-10   | Closed              | Suspect 1   |
++---------+--------------+--------------+---------------------+-------------+
++----------+
+| Name     |
++----------+
+| Robber 1 |
++----------+
+
+#Note : Output of queries that has age column involved is exempted as age column is not specified in the table creation queries
